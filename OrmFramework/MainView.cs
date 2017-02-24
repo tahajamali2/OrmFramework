@@ -17,6 +17,7 @@ namespace OrmFramework
 {
     public partial class MainView : Form
     {
+        bool btn_map_tobe_enable = false;
         public MainView()
         {
             InitializeComponent();
@@ -92,13 +93,21 @@ namespace OrmFramework
                     MiscClass.Namespace = Namespace;
 
                     label_folderpath.Text = folderBrowserDialog_csprojectfolder.SelectedPath;
-                    btn_map.Enabled = true;
+                    btn_map_tobe_enable = true;
+                    if (comboBox_applicationtype.SelectedIndex > -1)
+                    {
+                        btn_map.Enabled = true;
+                    }
+                    
                 }
             }
 
             catch (Exception ex)
             {
+                btn_map_tobe_enable = false;
+                btn_map.Enabled = false;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -518,6 +527,24 @@ exec(@SQL);";
 
                 }
 
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (btn_map_tobe_enable)
+            {
+                btn_map.Enabled = true;
+            }
+
+            else
+            {
+                btn_map.Enabled = false;
             }
         }
     }

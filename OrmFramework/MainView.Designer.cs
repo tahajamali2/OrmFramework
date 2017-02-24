@@ -48,6 +48,8 @@
             this.dataGridView_table = new System.Windows.Forms.DataGridView();
             this.btn_map = new System.Windows.Forms.Button();
             this.writeclass_progressBar = new System.Windows.Forms.ProgressBar();
+            this.label_applicationtype = new System.Windows.Forms.Label();
+            this.comboBox_applicationtype = new System.Windows.Forms.ComboBox();
             this.groupBox_choosefolder.SuspendLayout();
             this.groupBox_databaseobjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_storedprocedures)).BeginInit();
@@ -268,7 +270,7 @@
             this.btn_map.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_map.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_map.ForeColor = System.Drawing.Color.White;
-            this.btn_map.Location = new System.Drawing.Point(516, 453);
+            this.btn_map.Location = new System.Drawing.Point(573, 453);
             this.btn_map.Name = "btn_map";
             this.btn_map.Size = new System.Drawing.Size(80, 34);
             this.btn_map.TabIndex = 2;
@@ -287,11 +289,37 @@
             this.writeclass_progressBar.TabIndex = 23;
             this.writeclass_progressBar.Visible = false;
             // 
+            // label_applicationtype
+            // 
+            this.label_applicationtype.AutoSize = true;
+            this.label_applicationtype.Location = new System.Drawing.Point(329, 464);
+            this.label_applicationtype.Name = "label_applicationtype";
+            this.label_applicationtype.Size = new System.Drawing.Size(92, 13);
+            this.label_applicationtype.TabIndex = 24;
+            this.label_applicationtype.Text = "Application Type :";
+            this.label_applicationtype.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // comboBox_applicationtype
+            // 
+            this.comboBox_applicationtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_applicationtype.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox_applicationtype.FormattingEnabled = true;
+            this.comboBox_applicationtype.Items.AddRange(new object[] {
+            "Web",
+            "Console/Desktop"});
+            this.comboBox_applicationtype.Location = new System.Drawing.Point(432, 460);
+            this.comboBox_applicationtype.Name = "comboBox_applicationtype";
+            this.comboBox_applicationtype.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_applicationtype.TabIndex = 25;
+            this.comboBox_applicationtype.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 503);
+            this.Controls.Add(this.comboBox_applicationtype);
+            this.Controls.Add(this.label_applicationtype);
             this.Controls.Add(this.writeclass_progressBar);
             this.Controls.Add(this.btn_map);
             this.Controls.Add(this.groupBox_databaseobjects);
@@ -310,6 +338,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_table)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -328,6 +357,8 @@
         private System.Windows.Forms.Button button_create_sp;
         private System.Windows.Forms.Button button_createview;
         private System.Windows.Forms.Button button_createtype;
+        private System.Windows.Forms.Label label_applicationtype;
+        private System.Windows.Forms.ComboBox comboBox_applicationtype;
 
     }
 }
